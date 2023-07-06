@@ -1,6 +1,6 @@
 # Keypoint Annotation Software for Homography Labelling of Soccer Images
 
-This repository aims to ease the process of refining existing homography annotations for the *WorldCup* and *TS-WorldCup* datasets. 
+This repository aims to ease the process of refining existing homography annotations for the [WorldCup](https://nhoma.github.io/) and [TS-WorldCup](https://github.com/ericsujw/KpSFR) datasets. 
 For example, this keypoint reprojection from the *WorldCup* dataset
 
 ![bad homography annotation example](images/train26.jpg "Bad homography annotation")
@@ -9,21 +9,22 @@ is refined to
 
 ![better homography annotation example](images/train26cust.jpg "Better homography annotation")
 
-This is achieved by forming a grid of keypoints based on the template constructed in *utils.py*, and deforming this grid by dragging
+This is achieved by forming a grid of keypoints based on the template constructed in [utils.py](src/utils.py), and deforming this grid by dragging
 keypoints to the desired location. To allow keypoint updates to affect one another, we implement the deformation methods presented in the 
 paper [Image Deformation Using Moving Least Squares](https://people.engr.tamu.edu/schaefer/research/mls.pdf).
 
-Furthermore, this repository consolidates the *WorldCup* and *TS-WorldCup* datasets into the Consolidated WorldCup dataset.
+Furthermore, this repository consolidates the *WorldCup* and *TS-WorldCup* datasets into the **__Consolidated WorldCup dataset__**.
 
 ## Getting Started
 
-Create a new conda environment with the packages specified in spec_file.txt:
+First extract the *Dataset* folder from *[Dataset.tar.gz](dataset/consolidated/Dataset.tar.gz)*. Make sure the extracted *Dataset* folder is located in [dataset/consolidated/](dataset/consolidated/).
+Create a new conda environment with the packages specified in [spec_file.txt](spec_file.txt):
 
 ```
 $ conda create --name <env> --file spec_file.txt
 ```
 
-Then, activate the new environment and run image_viewer.py:
+Then, activate the new environment and run [image_viewer.py](src/image_viewer.py):
 
 ```
 $ conda activate <env>
@@ -42,7 +43,7 @@ The images in the folder are loaded and you can start dragging *draggable* keypo
 Note the keybinds at the bottom.
 Hovering over a keypoint and pressing *P* will fix a keypoint such that it is seen as a control point by the deformation method in use. You can also
 switch between deformation methods and delete or create keypoints. When creating keypoints, specify the keypoint ID in the *New KP ID* field and press enter.
-The default KP IDs are illustrated in dataset/consolidated/template_labels.png:
+The default KP IDs are illustrated in [dataset/consolidated/template_labels.png](dataset/consolidated/template_labels.png):
 
 ![labels](dataset/consolidated/template_labels.png "Keypoint Labels")
 
