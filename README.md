@@ -44,7 +44,7 @@ Hovering over a keypoint and pressing *P* will fix a keypoint such that it is se
 switch between deformation methods and delete or create keypoints. When creating keypoints, specify the keypoint ID in the *New KP ID* field and press enter.
 The default KP IDs are illustrated in dataset/consolidated/template_labels.png:
 
-![labels]("dataset/consolidated/template_labels.png" "Keypoint Labels")
+![labels](dataset/consolidated/template_labels.png "Keypoint Labels")
 
 Clicking on a keypoint will also display its ID next to the *Selected KP ID* field.
 When moving an existing keypoint, it does not have to be deleted before creating the new one.
