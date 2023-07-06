@@ -35,22 +35,26 @@ This will open the following window:
 ![screenshot](images/screenshot.jpg "Screenshot")
 
 Click *Browse* and navigate towards the folder containing the images to be annotated. E.g. *dataset/consolidated/Dataset/wc_train/*.
-The images in the folder is loaded and you can start dragging *draggable* keypoints (these are yellow) around. 
+The images in the folder are loaded and you can start dragging *draggable* keypoints (*these are yellow*) around. 
 
 ![screenshot2](images/screenshot2.jpg "Screenshot 2")
 
-Note the keybinds at the bottom,
-hovering over a keypoint and pressing *P* will fix a keypoint such that it is seen as a control point by the deformation method in use. You can also
+Note the keybinds at the bottom.
+Hovering over a keypoint and pressing *P* will fix a keypoint such that it is seen as a control point by the deformation method in use. You can also
 switch between deformation methods and delete or create keypoints. When creating keypoints, specify the keypoint ID in the *New KP ID* field and press enter.
-The default KP IDs are illustrated in dataset/consolidated/template_labels.png. Clicking on a keypoint will also display its ID next to the *Selected KP ID* field.
+The default KP IDs are illustrated in dataset/consolidated/template_labels.png:
+
+![labels]("dataset/consolidated/template_labels.png" "Keypoint Labels")
+
+Clicking on a keypoint will also display its ID next to the *Selected KP ID* field.
 When moving an existing keypoint, it does not have to be deleted before creating the new one.
 
 It is also possible to change the field template keypoints by altering the *gen_template_grid* function
 in *utils.py*.
 
-Once all keybinds are in their desired locations, press *SAVE* and the homography and ground truth keypoints positions will be saved to the *custom_labels* folder,
+Once all keybinds are in their desired locations, press *SAVE* and the homography and ground truth keypoint positions will be saved to the *custom_labels* folder,
 i.e. *dataset/consolidated/custom_labels*. You can then press *Next* and keep labelling. You can check the annotations that were saved previously (note the field next to *Prev* shows whether
-custome labels exist for the current image) with the *Load* buttons.
+custom labels exist for the current image) with the *Load* buttons.
 
 ## Predict function
 
