@@ -667,9 +667,16 @@ def load_path(images, location, window):
         gt_homo = np.loadtxt(path.replace('.jpg', '.homographyMatrix'))
     else:
         gt_homo_path = path.replace("Dataset", "Annotations")
-        gt_homo = np.load(gt_homo_path.replace('.jpg', '_homography.npy')) if 'IMG' in gt_homo_path else \
-            np.load(gt_homo_path.replace('jpg', 'npy'))
-    horz_line_info, vert_line_info, circle_info, img_id = load_image(path, window, gt_homo)
+        if 'IMG' in gt_homo_path:
+            gt_homo = np.load(gt_homo_path.replace('.jpg', '_homography.npy'))
+            horz_line_info, vert_line_info, circle_info, img_id = load_image(path, window, gt_homo)
+        else:
+            gt_homo = np.load(gt_homo_path.replace('.jpg', '.npy'))
+            horz_line_info, vert_line_info, circle_info, img_id = load_image(path, window, gt_homo)
+            clear_KPs_and_lines(circle_info, horz_line_info, vert_line_info, window)
+            circle_info = np.load(gt_homo_path.replace('jpg', 'npz'), allow_pickle=True)['arr_0'][()]
+            horz_line_info, vert_line_info, circle_info = redraw_KPs_and_lines(circle_info, window, None)
+
     control_points = set()
     window['-FILE-'].update(value=images[location])
 
