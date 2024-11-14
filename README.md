@@ -13,7 +13,7 @@ This is achieved by forming a grid of keypoints based on the template constructe
 keypoints to the desired location. To allow keypoint updates to affect one another, we implement the deformation methods presented in the 
 paper [Image Deformation Using Moving Least Squares](https://people.engr.tamu.edu/schaefer/research/mls.pdf).
 
-Furthermore, this repository consolidates the *WorldCup* and *TS-WorldCup* datasets into the **__Consolidated WorldCup dataset__**.
+Furthermore, this repository consolidates the *WorldCup* and *TS-WorldCup* datasets into the **__Consolidated WorldCup dataset__** released with the paper [Video-based sequential Bayesian homography estimation for soccer field registration](https://www.sciencedirect.com/science/article/pii/S0957417424010224).
 
 ## Getting Started
 
